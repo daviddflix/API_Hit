@@ -18,4 +18,6 @@ app.use(express.static('public'))
 const route = require('./routes/products')
 app.use(route)
 
+app.use(require('./routes/detail'))
+
 module.exports = app
