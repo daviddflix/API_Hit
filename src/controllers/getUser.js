@@ -6,10 +6,18 @@ const {User} = require('../database')
       console.log('data',email)
     try {
         
-        const usuario = await  User.findOne({where: {email: email}});
-        console.log('info',usuario)
+      const  users = await User.findAll()
+      console.log('users',users)
+        if(users.length){
+            const usuario = await  User.findAll({where: {email: email.email}});
+            console.log('usuario',usuario)
         
-          res.send(usuario)
+          return  res.send(usuario)
+        } else{
+            res.send('no hay usuarios')  
+        }
+       
+       
            
         
     } catch (error) {
