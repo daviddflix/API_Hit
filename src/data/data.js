@@ -1,54 +1,67 @@
-
-
-
+const product = ['Penne', 'Conchiglie', 'Cavatelli', 'Gnocchi', 'Spaguetti', 'Tagliattele' ]
+const sauces = ['Pomodoro', 'Crema', 'Arrabiata', 'Bolognesa', 'Pesto', 'Cheddar', 'Puttanesca', 'Oriental', 'Curry', 'Cuatro quesos', 'Crema de espinaca', 'Vodka sauce']
+const extra = ['Meatball','Bacon', 'Carne', 'Pollo', 'Queso Parmesano', 'Hongos', 'Aceitunas', 'Jalapeños', 'Tomates Confitados', 'Alcaparras', 'Panes']
+const price = 549
+const priceExtra = 90
 const data = [
     {
      image: '/img/conchiglie.jpg',
      description: 'Conchiglie',
-     price: 549,
-     pastas: ['penne', 'conchiglie', 'cavatelli', 'gnocchi', 'spaguetti', 'tagliattele' ],
-     salsas: ['pomodoro', 'crema', 'arrabiata', 'bolognesa', 'pesto', 'cheddar', 'puttanesca', 'oriental', 'curry', 'cuatro quesos', 'crema de espinaca', 'vodka sauce'],
-     toppings: ['meatball', 'bacon', 'carne', 'pollo', 'queso parmesano', 'hongos', 'aceitunas', 'jalapeños', 'tomates confitados', 'alcaparras', 'panes']
+     price: price,
+     pastas: product,
+     salsas: sauces ,
+     toppings: {price: priceExtra, option: extra}
     },
     {
      image:'/img/gno.jpg',
      description: 'Gnocchi',
-     price: 549,
-     pastas: ['penne', 'conchiglie', 'cavatelli', 'gnocchi', 'spaguetti', 'tagliattele' ],
-     salsas: ['pomodoro', 'crema', 'arrabiata', 'bolognesa', 'pesto', 'cheddar', 'puttanesca', 'oriental', 'curry', 'cuatro quesos', 'crema de espinaca', 'vodka sauce'],
-     toppings: ['meatball', 'bacon', 'carne', 'pollo', 'queso parmesano', 'hongos', 'aceitunas', 'jalapeños', 'tomates confitados', 'alcaparras', 'panes']
+     price: price,
+     pastas: product,
+     salsas: sauces ,
+     toppings: {price: priceExtra, option: extra}
     },
     {
      image: '/img/oriental.jpg',
      description: 'Spaguetti',
-     price: 549,
-     pastas: ['penne', 'conchiglie', 'cavatelli', 'gnocchi', 'spaguetti', 'tagliattele' ],
-     salsas: ['pomodoro', 'crema', 'arrabiata', 'bolognesa', 'pesto', 'cheddar', 'puttanesca', 'oriental', 'curry', 'cuatro quesos', 'crema de espinaca', 'vodka sauce'],
-     toppings: ['meatball', 'bacon', 'carne', 'pollo', 'queso parmesano', 'hongos', 'aceitunas', 'jalapeños', 'tomates confitados', 'alcaparras', 'panes']
+     price: price,
+     pastas: product,
+     salsas: sauces ,
+     toppings: {price: priceExtra, option: extra}
     },
     {
      image: '/img/penne.jpg',
      description: 'Penne Rigate',
-     price: 549,
-     pastas: ['penne', 'conchiglie', 'cavatelli', 'gnocchi', 'spaguetti', 'tagliattele' ],
-     salsas: ['pomodoro', 'crema', 'arrabiata', 'bolognesa', 'pesto', 'cheddar', 'puttanesca', 'oriental', 'curry', 'cuatro quesos', 'crema de espinaca', 'vodka sauce'],
-     toppings: ['meatball', 'bacon', 'carne', 'pollo', 'queso parmesano', 'hongos', 'aceitunas', 'jalapeños', 'tomates confitados', 'alcaparras', 'panes']
+     price: price,
+     pastas: product,
+     salsas: sauces ,
+     toppings: {price: priceExtra, option: extra}
     },
     {
      image: '/img/tagliatelli.jpg',
      description: 'Tagliattele',
-     price: 549,
-     pastas: ['penne', 'conchiglie', 'cavatelli', 'gnocchi', 'spaguetti', 'tagliattele' ],
-     salsas: ['pomodoro', 'crema', 'arrabiata', 'bolognesa', 'pesto', 'cheddar', 'puttanesca', 'oriental', 'curry', 'cuatro quesos', 'crema de espinaca', 'vodka sauce'],
-     toppings: ['meatball', 'bacon', 'carne', 'pollo', 'queso parmesano', 'hongos', 'aceitunas', 'jalapeños', 'tomates confitados', 'alcaparras', 'panes']
+     price: price,
+     pastas: product,
+     salsas: sauces ,
+     toppings: {price: priceExtra, option: extra}
     },
     {
      image: '/img/272938238_4857053377720643_6162256948801704121_n.jpg',
      description: 'Cavatelli',
-     price: 549,
-     pastas: ['penne', 'conchiglie', 'cavatelli', 'gnocchi', 'spaguetti', 'tagliattele' ],
-     salsas: ['pomodoro', 'crema', 'arrabiata', 'bolognesa', 'pesto', 'cheddar', 'puttanesca', 'oriental', 'curry', 'cuatro quesos', 'crema de espinaca', 'vodka sauce'],
-     toppings: ['meatball', 'bacon', 'carne', 'pollo', 'queso parmesano', 'hongos', 'aceitunas', 'jalapeños', 'tomates confitados', 'alcaparras', 'panes']
+     price: price,
+     pastas: product,
+     salsas: sauces ,
+     toppings: [{name: 'Meatball', price: priceExtra}, 
+     {name: 'Bacon', price: priceExtra}, 
+     {name: 'Carne', price: priceExtra}, 
+     {name: 'Pollo', price: priceExtra}, 
+     {name: 'Queso Parmesano', price: priceExtra},
+     {name: 'Hongos', price: priceExtra},
+     {name: 'Aceitunas', price: priceExtra},
+     {name: 'Jalapeños', price: priceExtra},
+     {name: 'Tomates Confitados', price: priceExtra},
+     {name: 'Alcaparras', price: priceExtra},
+     {name: 'Panes', price: priceExtra},
+     ]
     }
 ]
 
