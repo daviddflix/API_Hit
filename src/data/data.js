@@ -50,7 +50,8 @@ const data = [
      price: price,
      pastas: product,
      salsas: sauces ,
-     toppings: [{name: 'Meatball', price: priceExtra}, 
+     toppings: [
+     {name: 'Meatball', price: priceExtra}, 
      {name: 'Bacon', price: priceExtra}, 
      {name: 'Carne', price: priceExtra}, 
      {name: 'Pollo', price: priceExtra}, 

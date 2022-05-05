@@ -4,7 +4,7 @@ const server = require('./src/app')
 
 const port = process.env.PORT || 5000
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
 
   
     server.listen(port, () => {
