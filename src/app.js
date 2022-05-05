@@ -19,5 +19,6 @@ app.use(express.static('public'))
 app.use(require('./routes/products'))
 app.use(require('./routes/detail'))
 app.use(require('./routes/user'))
+app.use(require('./routes/getUser'))
 
 module.exports = app
