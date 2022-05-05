@@ -10,15 +10,15 @@ const {
 } = process.env;
 
 
-const sequelize = new Sequelize(DATABASE_URL, {
+const sequelize = new Sequelize('postgres://postgres:Austria2021@localhost/hit', {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false
-    }
-  }
+  // dialectOptions: {
+  //   ssl: {
+  //     require: true,
+  //     rejectUnauthorized: false
+  //   }
+  // }
 });
 
 
