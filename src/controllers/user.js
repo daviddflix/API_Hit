@@ -13,7 +13,14 @@ const {User} = require('../database')
            if(!usuario.length){
             User.create({
                 email,
-                name,  
+                name, 
+                nickname,
+                phonenumber,
+                address, 
+                picture, 
+                feedback, 
+                purchases
+
             }) 
           res.send('user added to the DB')
            } else{
