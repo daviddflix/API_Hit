@@ -50,19 +50,7 @@ const data = [
      price: price,
      pastas: product,
      salsas: sauces ,
-     toppings: [
-     {name: 'Meatball', price: priceExtra}, 
-     {name: 'Bacon', price: priceExtra}, 
-     {name: 'Carne', price: priceExtra}, 
-     {name: 'Pollo', price: priceExtra}, 
-     {name: 'Queso Parmesano', price: priceExtra},
-     {name: 'Hongos', price: priceExtra},
-     {name: 'Aceitunas', price: priceExtra},
-     {name: 'Jalapeños', price: priceExtra},
-     {name: 'Tomates Confitados', price: priceExtra},
-     {name: 'Alcaparras', price: priceExtra},
-     {name: 'Panes', price: priceExtra},
-     ]
+     toppings: {price: priceExtra, option: extra}
     }
 ]
 

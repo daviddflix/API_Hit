@@ -20,5 +20,7 @@ app.use(require('./routes/products'))
 app.use(require('./routes/detail'))
 app.use(require('./routes/user'))
 app.use(require('./routes/getUser'))
+app.use(require('./routes/compras'))
+app.use(require('./routes/getAllCompras'))
 
 module.exports = app

@@ -7,7 +7,7 @@ const {User} = require('../database')
     try {
         
         const usuario = await  User.findAll({where: {name: name}});// data de la tabla
-        console.log('potuer',usuario)
+        console.log('user',usuario)
         
        
            if(!usuario.length){
