@@ -17,7 +17,7 @@ const {Compras} = require('../database')
         price, 
         product,
         id,
-        priceTopping, salsa, toppings_finals} = req.body
+        priceTopping, salsa, toppings_finals} = req.body || req.query
       console.log('data', finalPrice)
 
     try {
