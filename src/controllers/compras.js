@@ -26,7 +26,7 @@ const {Compras} = require('../database')
         
        if(value){
          console.log('value',value)
-        res.send('purchase added')
+        res.send(value)
        } else{
         res.send('purchase not added to the DB, value not provided')
        }    
