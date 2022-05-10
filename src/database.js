@@ -41,6 +41,13 @@ const sequelize = new Sequelize(DATABASE_URL, {
    let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
    sequelize.models = Object.fromEntries(capsEntries);
 
+   const {Compras, Pagos, Products, User} = sequelize.models
+
+   User.belongsToMany(Compras, {through: "user_compra"})
+   Compras.belongsToMany(User, {through: "user_compra"})
+
+  //  User.hasMany(Pagos)
+  //  Pagos.belongsTo(User)
   
    console.log('modelos',  sequelize.models)
 

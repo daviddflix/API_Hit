@@ -2,24 +2,22 @@ const {User} = require('../database')
 
 
  const user = (async (req, res) => {
-      const {email, name, nickname, phonenumber, address, picture, feedback, purchases} = req.body
-      console.log('data',name)
+      const {email, nombre, numero, direccion, user_id} = req.body
+    
     try {
+
         
-        const usuario = await  User.findAll({where: {name: name}});// data de la tabla
-        console.log('user',usuario)
+        const usuario = await  User.findAll({where: {id: user_id}});// data de la tabla
+        console.log('user:',usuario)
         
        
            if(!usuario.length){
-            User.create({
+          await  User.create({
                 email,
-                name, 
-                nickname,
-                phonenumber,
-                address, 
-                picture, 
-                feedback, 
-                purchases
+                name: nombre,    
+                phonenumber: numero,
+                address: direccion, 
+                id: user_id,
 
             }) 
           res.send('user added to the DB')

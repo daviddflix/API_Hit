@@ -1,16 +1,16 @@
-const {User} = require('../database')
+const {User, Compras} = require('../database')
 
 
  const getUser = (async (req, res) => {
       const email = req.body || req.query
-      console.log('data',email)
+     
     try {
         
       const  users = await User.findAll()
-      console.log('users',users)
+     
         if(users.length){
-            const usuario = await  User.findAll({where: {email: email.email}});
-            console.log('usuario',usuario)
+            const usuario = await  User.findAll({where: {email: email.email}, include: [Compras]});
+            
         
           return  res.send(usuario)
         } else{
