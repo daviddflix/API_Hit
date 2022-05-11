@@ -1,8 +1,8 @@
-// const express = require('express')
-// const router = express.Router()
+const express = require('express')
+const router = express.Router()
 
-// const pagos = require('../controllers/pagos')
+const pagos = require('../controllers/pagos')
 
-// router.get('/', pagos)
+router.get('/payment', pagos)
 
-// module.exports = router
+module.exports = router

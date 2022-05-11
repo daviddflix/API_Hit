@@ -2,10 +2,10 @@ const {User} = require('../database')
 
 
  const user = (async (req, res) => {
+     console.log('re.body:',req.body)
       const {email, nombre, numero, direccion, user_id} = req.body
-    
     try {
-
+ 
         
         const usuario = await  User.findAll({where: {id: user_id}});// data de la tabla
         console.log('user:',usuario)
@@ -13,7 +13,7 @@ const {User} = require('../database')
        
            if(!usuario.length){
           await  User.create({
-                email,
+                email: email,
                 name: nombre,    
                 phonenumber: numero,
                 address: direccion, 

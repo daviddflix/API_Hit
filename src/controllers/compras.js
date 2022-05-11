@@ -15,24 +15,23 @@ const {Compras, User } = require('../database')
 
  const compras = (async (req, res) => {
       const  value = req.body || req.query
- 
+     console.log('value:', value)
  //       prices of each item
-      const pricesItem = await value.map(p => p.finalPrice)
+      const pricesItem =  value.map(p => p.finalPrice)
       const total = pricesItem.reduce((prev, curr) => prev + curr, 0)
 
       // id 
-     
 
-      const id = await value.map(p => p.user_id)
-      console.log("id:", id)
-      const user = await User.findAll({where:{id: id[0]}})
-      console.log("user:", user)
+      
     try {
       if(value){
       const compra = await Compras.create({
           pedido: value,
           total: total
         })
+
+         const id =  value.map(p => p.id)
+      const user = await User.findAll({where:{id: id[0]}})
  
         await compra.addUser(user)
          res.send('purchase added')

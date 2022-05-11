@@ -1,9 +1,8 @@
-const mercadopago = require("mercadopago")
+// const mercadopago = require("mercadopago")
 
-require("dotenv").config()
+// require("dotenv").config()
 
-mercadopago.configure({
-    access_token:process.env.TEST_ACCESS_TOKEN
-})
+// mercadopago.configure({
+//     access_token:process.env.TEST_ACCESS_TOKEN
+// })
 
-module.exports = mercadopago

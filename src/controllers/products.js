@@ -4,7 +4,7 @@ const {Products} = require('../database')
 
  const products = (async (req, res) => {
     
-    try {
+    try { 
         
         const info = await  Products.findAll();// data de la tabla
         console.log('info',info)
