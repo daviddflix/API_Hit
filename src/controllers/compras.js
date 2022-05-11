@@ -17,7 +17,7 @@ const {Compras, User } = require('../database')
       const  value = req.body || req.query
      console.log('value:', value)
  //       prices of each item
-      const pricesItem =  value.map(p => p.finalPrice)
+      const pricesItem =  value.map(p => p.unit_price)
       const total = pricesItem.reduce((prev, curr) => prev + curr, 0)
 
       // id 
