@@ -7,11 +7,11 @@ const {Products} = require('../database')
     try { 
         
         const info = await  Products.findAll();// data de la tabla
-        console.log('info',info)
-        if(!info.length){
+       
+        if(info.length === 0){
             Products.bulkCreate(data) // llena la Db
           }
-          if(info.length != 0){
+          if(info.length){
             res.send(info)
         }
     } catch (error) {

@@ -7,7 +7,7 @@ const {Products} = require('../database')
     try { 
         const info = await  Products.findByPk(id);
        info? res.send(info) : res.sendStatus(404)
-        console.log(info)
+            
     } catch (error) {
         console.log('algo paso',error)
     }

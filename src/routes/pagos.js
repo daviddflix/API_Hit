@@ -3,6 +3,6 @@ const router = express.Router()
 
 const pagos = require('../controllers/pagos')
 
-router.get('/payment', pagos)
+router.post('/payment', pagos)
 
 module.exports = router

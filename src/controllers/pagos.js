@@ -2,9 +2,9 @@ const {Compras, User} = require('../database')
 const axios = require("axios");
 
 const payment = (async (req, res) => {
-   
+      console.log('req.body pagos', req.body)
     const itemsToPay = req.body
-
+      console.log('itemstopay', itemsToPay)
     const url = "https://api.mercadopago.com/checkout/preferences";
     
     try {
