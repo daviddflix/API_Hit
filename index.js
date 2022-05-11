@@ -2,12 +2,17 @@
 const {sequelize} = require('./src/database')
 const server = require('./src/app')
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 4000
 
 sequelize.sync({ force: true }).then(() => {
-
   
+  try {
     server.listen(port, () => {
-      console.log('%s server is listening on port 5000'); 
+      console.log(`%s server is listening on port ${port}`); 
     });
+  } catch (error) {
+    console.log(error)
+  }
+  
+   
 });
