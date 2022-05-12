@@ -10,15 +10,15 @@ const {
 } = process.env;
 
 // 'postgres://postgres:Austria2021@localhost/hit'
-const sequelize = new Sequelize(DATABASE_URL, {
+const sequelize = new Sequelize('postgres://postgres:Austria2021@localhost/hit', {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false
-    }
-  } 
+  // dialectOptions: {
+  //   ssl: {
+  //     require: true,
+  //     rejectUnauthorized: false
+  //   }
+  // } 
 });
 
 
@@ -43,11 +43,11 @@ const sequelize = new Sequelize(DATABASE_URL, {
 
    const {Compras, Pagos, Products, User} = sequelize.models
 
-   User.belongsToMany(Compras, {through: "user_compra"})
-   Compras.belongsToMany(User, {through: "user_compra"})
+   User.hasMany(Compras)
+   Compras.belongsTo(User)
 
-  //  User.hasMany(Pagos)
-  //  Pagos.belongsTo(User)
+   User.hasMany(Pagos)
+   Pagos.belongsTo(User)
   
    console.log('modelos',  sequelize.models)
 

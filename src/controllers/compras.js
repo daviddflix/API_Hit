@@ -1,27 +1,23 @@
 const {Compras, User } = require('../database')
 
  const compras = (async (req, res) => {
-      const  value = req.body || req.query
+      const  value = req.body 
      
- //       prices of each item
-      const pricesItem =  value.map(p => p.unit_price)
-      
+   
+      const pricesItem =  value.cart.map(p => p.unit_price)
       const total = pricesItem.reduce((prev, curr) => prev + curr, 0)
-
-      
 
       
     try {
       if(value){
       const compra = await Compras.create({
-          pedido: value,
+          pedido: value.cart,
           total: total
         })
 
-         const id =  value.map(p => p.id)
-         const user = await User.findAll({where:{id: id[0]}})
- 
-        await compra.addUser(user)
+         const id =  value.user.sub
+         const user = await User.findAll({where:{id: id}})
+        await compra.setUser(id)
          res.send('purchase added')
 
         } else{
@@ -29,7 +25,7 @@ const {Compras, User } = require('../database')
        }    
         
     } catch (error) {
-        console.log('algo paso',error)
+        console.log('algo paso en compras',error)
     }
   
 })
