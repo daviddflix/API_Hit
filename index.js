@@ -2,7 +2,7 @@
 const {sequelize} = require('./src/database')
 const server = require('./src/app')
 
-const port = process.env.PORT || 4001
+const port = process.env.PORT || 4000
 
 sequelize.sync({ force: true }).then(() => {
   

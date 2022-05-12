@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   });
 app.use(express.static('public'))
 // app.use(express.urlencoded({extended: false}))
-app.use(favicon(path.join(__dirname,'public','favicon.png')))
+app.use(favicon(path.join('public','favicon.ico')))
 
 //ROUTES
 
