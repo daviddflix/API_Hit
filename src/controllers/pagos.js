@@ -4,7 +4,7 @@ const axios = require("axios");
 const payment = (async (req, res) => {
       
     const itemsToPay = req.body
-     
+     console.log('itemtopay:',itemsToPay)
     const url = "https://api.mercadopago.com/checkout/preferences";
     
     try {
@@ -13,7 +13,7 @@ const payment = (async (req, res) => {
           
         if(itemsToPay && user){
             const body = {
-                payer_email: user.email,
+                payer_email: itemsToPay.user.email,
                 items: itemsToPay.cart,
                 back_urls: {
                   failure: "/failure",
@@ -25,12 +25,12 @@ const payment = (async (req, res) => {
               const payment = await axios.post(url, body, {
                 headers: {
                   "Content-Type": "application/json",
-                  Authorization: `Bearer ${process.env.ACCESS_TOKEN}`
+                  Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
                 }
               });
               // const user = await User.findAll({where:{id: id}})
-              // await compra.setUser(id)
-              console.log(payment)
+              // await payment.setUser(id)
+              // console.log('payment:', payment)
               res.send(payment.data)
         } else{
             res.send('no hay productos a pagar')

@@ -8,7 +8,7 @@ const {User} = require('../database')
  
         
         const usuario = await  User.findAll({where: {id: sub}});// data de la tabla
-       
+          
         
        
            if(!usuario.length){
