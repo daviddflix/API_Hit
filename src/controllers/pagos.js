@@ -44,17 +44,11 @@ const payment = (async (req, res) => {
 
 // Agrega credenciales
 mercadopago.configure({
-  access_token: process.env.TEST_ACCESS_TOKEN
+  access_token: process.env.ACCESS_TOKEN
 });
 // Crea un objeto de preferencia
 let preference = {
-  items: [
-    {
-      title: 'Mi producto',
-      unit_price: 100,
-      quantity: 1,
-    }
-  ]
+  items: itemsToPay.cart
 };
 mercadopago.preferences.create(preference)
 .then(function(response){
