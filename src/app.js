@@ -21,7 +21,7 @@ app.use(cors())
 app.use(express.static('public'))
 app.use(favicon(path.join('public','favicon.ico')))
 
-//ROUTES
+
 
 
 app.use(require('./routes/products'))
