@@ -30,7 +30,7 @@ const payment = (async (req, res) => {
               });
               // const user = await User.findAll({where:{id: id}})
               // await payment.setUser(id)
-              // console.log('payment:', payment)
+              console.log('payment:', payment)
               res.send(payment.data)
         } else{
             res.send('no hay productos a pagar')
