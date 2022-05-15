@@ -48,7 +48,12 @@ mercadopago.configure({
 });
 // Crea un objeto de preferencia
 let preference = {
-  items: itemsToPay.cart
+  items: itemsToPay.cart,
+  back_urls: {
+    failure: "https://hitpasta.vercel.app",
+    pending: "https://hitpasta.vercel.app",
+    success: "https://hitpasta.vercel.app"
+  }
 };
 mercadopago.preferences.create(preference)
 .then(function(response){
