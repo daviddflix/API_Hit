@@ -25,7 +25,7 @@ const payment = (async (req, res) => {
               const payment = await axios.post(url, body, {
                 headers: {
                   "Content-Type": "application/json",
-                  Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
+                  Authorization: `Bearer ${process.env.ACCESS_TOKEN}`
                 }
               });
               // const user = await User.findAll({where:{id: id}})
