@@ -3,7 +3,7 @@ const {User} = require('../database')
 
  const user = (async (req, res) => {
     
-      const {sub, nombre, direccion, numero, email} = req.body
+      const {sub, nombre, direccion, numero, email, zona} = req.body
     try {
  
         
@@ -18,7 +18,8 @@ const {User} = require('../database')
                 name: nombre,    
                 id: sub,
                 address: direccion, 
-                phonenumber: numero
+                phonenumber: numero,
+                zona: zona
             }) 
           res.send('user added to the DB')
            } else{

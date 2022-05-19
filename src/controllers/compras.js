@@ -14,7 +14,8 @@ const {Compras, User } = require('../database')
           pedido: value.cart,
           total: total,
           direccionDeEnvio: value.input.direccion,
-          celular: value.input.numero
+          celular: value.input.numero,
+          zona: value.input.zona
         })
 
          const id =  value.input.sub
