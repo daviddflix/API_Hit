@@ -10,5 +10,8 @@ module.exports = (sequelize) => {
     salsas: {type: DataTypes.JSON},
     pastas: {type: DataTypes.JSON},
     toppings: {type: DataTypes.JSON},
+    dessert: {type: DataTypes.JSON},
+    beers: {type: DataTypes.JSON},
+    beverages: {type: DataTypes.JSON},
   }, {timestamps: false })
 };
