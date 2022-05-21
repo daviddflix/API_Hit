@@ -15,7 +15,7 @@ const extra = ['Meatball','Bacon', 'Carne', 'Pollo', 'Queso Parmesano', 'Hongos'
 const dessert = [{title: 'Cheesecake', picture_url: '/img/Images/cheesecake.jpg'}, {title: 'Chocotorta', picture_url: '/img/Images/chocotorta.jpg'}, {title: 'Tiramisu', picture_url: 'img/Images/tiramisu2.jpg'}]
 
 const beers = [{title: 'Imperial Lager 473ml', price: 350, picture_url: '/img/Drinks/lager.jpeg'}, 
-{title: 'Heineken Regular 473ml', price: 420, picture_url: '/img/Drinks/hei2.webp'}, 
+{title: 'Heineken Regular 473ml', price: 420, picture_url: '/img/Drinks/hei3.webp'}, 
 {title: 'Imperial Amber Lager 473ml', price: 350, picture_url: '/img/Drinks/amber.jpg'}, 
 {title: 'Imperial Ipa 473ml', price: 350, picture_url: '/img/Drinks/ipa2.jpg'}]
 
