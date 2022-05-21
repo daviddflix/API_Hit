@@ -13,8 +13,19 @@ const sauces = [{sauce: 'Pomodoro', description: 'Salsa de Tomate Especial HIT'}
 ]
 const extra = ['Meatball','Bacon', 'Carne', 'Pollo', 'Queso Parmesano', 'Hongos', 'Aceitunas', 'Jalapeños', 'Tomates Confitados', 'Alcaparras', 'Panes']
 const dessert = [{title: 'Cheesecake', picture_url: '/img/Images/cheesecake.jpg'}, {title: 'Chocotorta', picture_url: '/img/Images/chocotorta.jpg'}, {title: 'Tiramisu', picture_url: 'img/Images/tiramisu2.jpg'}]
-const beers = [{product: 'Imperial Lager 473ml', price: 350}, {product: 'Heineken Regular 473ml', price: 420}, {product: 'Imperial Amber Lager 473ml', price: 350}, {product: 'Imperial Ipa 473ml', price: 350}]
-const beverages = [{product: 'Coca-Cola Light 354ml', price: 230}, {product: 'Coca-Cola Sin Azúcar', price: 270}, {product: 'Coca-Cola Sabor Original 354ml', price: 270}, {product: 'Fanta Naranja 354ml', price: 270}, {product: 'Sprite Lima Limón 354ml', price: 270}, {product: 'Sprite Lima Limón 354ml', price: 270}, {product: 'Coca-Cola Light 354ml', price: 230}, {product: 'SmartWater Sin Gas 591ml', price: 270}]
+
+const beers = [{title: 'Imperial Lager 473ml', price: 350, picture_url: '/img/Drinks/lager.jpeg'}, 
+{title: 'Heineken Regular 473ml', price: 420, picture_url: '/img/Drinks/hei.jpg'}, 
+{title: 'Imperial Amber Lager 473ml', price: 350, picture_url: '/img/Drinks/amber.jpg'}, 
+{title: 'Imperial Ipa 473ml', price: 350, picture_url: '/img/Drinks/ipa2.jpg'}]
+
+const beverages = [{title: 'Coca-Cola Light 354ml', price: 230, picture_url: '/img/Drinks/cocalight.jpg'}, 
+{title: 'Coca-Cola Sin Azúcar', price: 270, picture_url: '/img/Drinks/cocasin.webp'}, 
+{title: 'Coca-Cola Sabor Original 354ml', price: 270, picture_url: '/img/Drinks/cocaoriginal.jpg'}, 
+{title: 'Fanta Naranja 354ml', price: 270, picture_url: '/img/Drinks/fanta.webp'}, 
+{title: 'Sprite Lima Limón 354ml', price: 270, picture_url: '/img/Drinks/sprite.jpg'},  
+{title: 'SmartWater Sin Gas 591ml', price: 270, picture_url: '/img/Drinks/smart.jpg'}]
+
 const dessertPrice = 400
 const price = 699
 const priceExtra = 119
