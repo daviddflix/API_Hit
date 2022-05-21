@@ -14,17 +14,18 @@ const sauces = [{sauce: 'Pomodoro', description: 'Salsa de Tomate Especial HIT'}
 const extra = ['Meatball','Bacon', 'Carne', 'Pollo', 'Queso Parmesano', 'Hongos', 'Aceitunas', 'Jalapeños', 'Tomates Confitados', 'Alcaparras', 'Panes']
 const dessert = [{title: 'Cheesecake', picture_url: '/img/Images/cheesecake.jpg'}, {title: 'Chocotorta', picture_url: '/img/Images/chocotorta.jpg'}, {title: 'Tiramisu', picture_url: 'img/Images/tiramisu2.jpg'}]
 
-const beers = [{title: 'Imperial Lager 473ml', price: 350, picture_url: '/img/Drinks/lager.jpeg'}, 
-{title: 'Heineken Regular 473ml', price: 420, picture_url: '/img/Drinks/heicrop.png'}, 
-{title: 'Imperial Amber Lager 473ml', price: 350, picture_url: '/img/Drinks/amber.jpg'}, 
-{title: 'Imperial Ipa 473ml', price: 350, picture_url: '/img/Drinks/ipa2.jpg'}]
+
 
 const beverages = [{title: 'Coca-Cola Light 354ml', price: 230, picture_url: '/img/Drinks/cocalight.jpg'}, 
 {title: 'Coca-Cola Sin Azúcar', price: 270, picture_url: '/img/Drinks/cocasin.webp'}, 
 {title: 'Coca-Cola Sabor Original 354ml', price: 270, picture_url: '/img/Drinks/cocaoriginal.jpg'}, 
 {title: 'Fanta Naranja 354ml', price: 270, picture_url: '/img/Drinks/fanta.webp'}, 
 {title: 'Sprite Lima Limón 354ml', price: 270, picture_url: '/img/Drinks/sprite2.webp'},  
-{title: 'SmartWater Sin Gas 591ml', price: 270, picture_url: '/img/Drinks/smart.jpg'}]
+{title: 'SmartWater Sin Gas 591ml', price: 270, picture_url: '/img/Drinks/smart.jpg'},
+{title: 'Imperial Lager 473ml', price: 350, picture_url: '/img/Drinks/lager.jpeg'}, 
+{title: 'Heineken Regular 473ml', price: 420, picture_url: '/img/Drinks/heicrop.png'}, 
+{title: 'Imperial Amber Lager 473ml', price: 350, picture_url: '/img/Drinks/amber.jpg'}, 
+{title: 'Imperial Ipa 473ml', price: 350, picture_url: '/img/Drinks/ipa2.jpg'}]
 
 const dessertPrice = 400
 const price = 699
@@ -38,7 +39,6 @@ const data = [
      salsas: sauces ,
      toppings: {price: priceExtra, option: extra},
      dessert: {dessert, dessertPrice},
-     beers: beers,
      beverages: beverages
     },
     {
