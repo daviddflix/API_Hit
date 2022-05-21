@@ -23,7 +23,7 @@ const beverages = [{title: 'Coca-Cola Light 354ml', price: 230, picture_url: '/i
 {title: 'Coca-Cola Sin Azúcar', price: 270, picture_url: '/img/Drinks/cocasin.webp'}, 
 {title: 'Coca-Cola Sabor Original 354ml', price: 270, picture_url: '/img/Drinks/cocaoriginal.jpg'}, 
 {title: 'Fanta Naranja 354ml', price: 270, picture_url: '/img/Drinks/fanta.webp'}, 
-{title: 'Sprite Lima Limón 354ml', price: 270, picture_url: '/img/Drinks/sprite.jpg'},  
+{title: 'Sprite Lima Limón 354ml', price: 270, picture_url: '/img/Drinks/sprite2.webp'},  
 {title: 'SmartWater Sin Gas 591ml', price: 270, picture_url: '/img/Drinks/smart.jpg'}]
 
 const dessertPrice = 400
