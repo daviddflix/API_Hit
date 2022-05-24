@@ -16,7 +16,7 @@ const notification = (async(req, res) => {
 
     const id = req.body.data.id
    
-    if(req.query.id){
+  
         const url = `https://api.mercadopago.com/v1/payments/${id}`
 
         const payment = await axios.get(url, {
@@ -24,11 +24,12 @@ const notification = (async(req, res) => {
                        Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
                      }
                    });
+                   
                    res.sendStatus(200)
                    console.log('datosPayment:', payment)
-    } else{
-        res.sendStatus(200)
-    }
+   
+      
+    
              
     // res.sendStatus(200)
 })
