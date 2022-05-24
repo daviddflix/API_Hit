@@ -13,16 +13,16 @@ const notification = (async(req, res) => {
 
     console.log('body:',req.body)
    
-   const url = `https://api.mercadopago.com/v1/payments/${req.body.data.id}`
+//    const url = `https://api.mercadopago.com/v1/payments/${req.body.data.id}`
 
-   const payment = await axios.get(url, {
-                headers: {
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
-                }
-              });
+//    const payment = await axios.get(url, {
+//                 headers: {
+//                   "Content-Type": "application/json",
+//                   Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
+//                 }
+//               });
 
-              console.log('datosPayment:', payment)
+//               console.log('datosPayment:', payment)
               res.sendStatus(200)
 
 })
