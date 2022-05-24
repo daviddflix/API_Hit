@@ -13,13 +13,14 @@ const notification = (async(req, res) => {
 
     console.log('query:',req.query)
     console.log('body:',req.body)
+
+    const id = req.query.data.id
    
     if(req.query.id){
-        const url = `https://api.mercadopago.com/v1/payments/${req.query.data.id}`
+        const url = `https://api.mercadopago.com/v1/payments/${id}`
 
         const payment = await axios.get(url, {
                      headers: {
-                       "Content-Type": "application/json",
                        Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
                      }
                    });
