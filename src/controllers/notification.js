@@ -14,7 +14,7 @@ const notification = (async(req, res) => {
     console.log('query:',req.query)
     console.log('body:',req.body)
 
-    const id = req.query.data.id
+    const id = req.body.data.id
    
     if(req.query.id){
         const url = `https://api.mercadopago.com/v1/payments/${id}`
