@@ -30,7 +30,7 @@ const notification = (async(req, res) => {
      } catch (error) {
          console.log('errorNotification:', error)
      }
-   
+      
       
     
              
