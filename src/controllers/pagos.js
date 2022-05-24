@@ -1,9 +1,10 @@
 const {Pagos, User} = require('../database')
 const axios = require("axios");
 const mercadopago = require ('mercadopago');
-const accountSid = 'ACcf9366d9570236546173ca619d4d6a5a'; 
-const authToken = process.env.AUTHTOKEN; 
-const client = require('twilio')(accountSid, authToken); 
+
+// const accountSid = 'ACcf9366d9570236546173ca619d4d6a5a'; 
+// const authToken = process.env.AUTHTOKEN; 
+// const client = require('twilio')(accountSid, authToken); 
  
 
 
@@ -23,14 +24,14 @@ const payment = (async (req, res) => {
      )
    })
 
-   client.messages 
-      .create({ 
-         body: 'Tu orden ha sido creada con exito. Para hacer otro pedido visita nuestra pagina: https.hitpasta.vercel.app', 
-         from: 'whatsapp:+14155238886',       
-         to: `whatsapp:+549${user[0].phonenumber}`
-       }) 
-      .then(message => console.log(message.sid)) 
-      .done();
+  //  client.messages 
+  //     .create({ 
+  //        body: 'Tu orden ha sido creada con exito. Para hacer otro pedido visita nuestra pagina: https.hitpasta.vercel.app', 
+  //        from: 'whatsapp:+14155238886',       
+  //        to: `whatsapp:+549${user[0].phonenumber}`
+  //      }) 
+  //     .then(message => console.log(message.sid)) 
+  //     .done();
    
   // Agrega credenciales
   mercadopago.configure({
