@@ -1,4 +1,10 @@
 const {Pagos} = require('../database')
+const axios = require("axios");
+
+
+// const accountSid = 'ACcf9366d9570236546173ca619d4d6a5a'; 
+// const authToken = process.env.AUTHTOKEN; 
+// const client = require('twilio')(accountSid, authToken); 
 
 // var mercadopago = require('mercadopago');
 // mercadopago.configurations.setAccessToken(process.env.TEST_ACCESS_TOKEN);
@@ -6,9 +12,8 @@ const {Pagos} = require('../database')
 const notification = (async(req, res) => {
 
     console.log('body:',req.body)
-    res.sendStatus(200)
-
-   const url = `https://api.mercadopago.com/v1/payments/${req.body.id}`
+   
+   const url = `https://api.mercadopago.com/v1/payments/${req.body.data.id}`
 
    const payment = await axios.get(url, {
                 headers: {
@@ -18,6 +23,7 @@ const notification = (async(req, res) => {
               });
 
               console.log('datosPayment:', payment)
+              res.sendStatus(200)
 
 })
 
@@ -58,3 +64,15 @@ module.exports = notification
 //     .catch(function(error) {
 //       console.log('errornotification: ', error)
 //     });
+
+
+
+
+  //  client.messages 
+  //     .create({ 
+  //        body: 'Tu orden ha sido creada con exito. Para hacer otro pedido visita nuestra pagina: https.hitpasta.vercel.app', 
+  //        from: 'whatsapp:+14155238886',       
+  //        to: `whatsapp:+549${user[0].phonenumber}`
+  //      }) 
+  //     .then(message => console.log(message.sid)) 
+  //     .done();
