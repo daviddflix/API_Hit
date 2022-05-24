@@ -1,7 +1,7 @@
 const {Pagos} = require('../database')
 
 var mercadopago = require('mercadopago');
-mercadopago.configurations.setAccessToken(process.env.ACCESS_TOKEN);
+mercadopago.configurations.setAccessToken(process.env.TEST_ACCESS_TOKEN);
 
 const notification = (async(req, res) => {
     console.log('body:',req.body)
