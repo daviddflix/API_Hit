@@ -15,7 +15,7 @@ const notification = (async(req, res) => {
     console.log('body:',req.body)
    
     if(req.query.id){
-        const url = `https://api.mercadopago.com/v1/payments/${req.query.id}`
+        const url = `https://api.mercadopago.com/v1/payments/${req.query.data.id}`
 
         const payment = await axios.get(url, {
                      headers: {

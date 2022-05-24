@@ -34,7 +34,6 @@ const payment = (async (req, res) => {
       success: "https://hitpasta.vercel.app"
     },
     binary_mode:true,
-    notification_url: "https://hit-pasta.herokuapp.com/postnotification",
     total_amount: totalAmount
     
   };
