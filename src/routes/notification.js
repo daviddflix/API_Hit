@@ -1,8 +1,8 @@
-const express = require('express')
-const router = express.Router()
+// const express = require('express')
+// const router = express.Router()
 
-const notification = require('../controllers/notification')
+// const notification = require('../controllers/notification')
 
-router.post('/postnotification', notification)
+// router.post('/postnotification', notification)
 
-module.exports = router
+// module.exports = router
