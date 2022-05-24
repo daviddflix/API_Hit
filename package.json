@@ -17,6 +17,7 @@
     "mercadopago": "^1.5.11",
     "pg": "^8.7.3",
     "sequelize": "^6.19.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "twilio": "^3.77.1"
   }
 }
