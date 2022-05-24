@@ -24,7 +24,7 @@ const notification = (async(req, res) => {
                        Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
                      }
                    });
-                      
+                         
                    res.sendStatus(200)
                    console.log('datosPayment:', payment)
    
