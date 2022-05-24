@@ -24,8 +24,10 @@ const notification = (async(req, res) => {
                    });
      
                    console.log('datosPayment:', payment)
+    } else{
+        res.sendStatus(200)
     }
-              res.sendStatus(200)
+             
 
 })
 
