@@ -14,22 +14,22 @@ const notification = (async(req, res) => {
     console.log('query:',req.query)
     console.log('body:',req.body)
    
-    // if(req.body.data.id){
-    //     const url = `https://api.mercadopago.com/v1/payments/${req.body.data.id}`
+    if(req.query.id){
+        const url = `https://api.mercadopago.com/v1/payments/${req.query.id}`
 
-    //     const payment = await axios.get(url, {
-    //                  headers: {
-    //                    "Content-Type": "application/json",
-    //                    Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
-    //                  }
-    //                });
-     
-    //                console.log('datosPayment:', payment)
-    // } else{
-    //     res.sendStatus(200)
-    // }
+        const payment = await axios.get(url, {
+                     headers: {
+                       "Content-Type": "application/json",
+                       Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
+                     }
+                   });
+                   res.sendStatus(200)
+                   console.log('datosPayment:', payment)
+    } else{
+        res.sendStatus(200)
+    }
              
-    res.sendStatus(200)
+    // res.sendStatus(200)
 })
 
 module.exports = notification
