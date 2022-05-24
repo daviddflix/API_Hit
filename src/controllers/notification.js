@@ -14,9 +14,9 @@ const notification = (async(req, res) => {
     console.log('query:',req.query)
     console.log('body:',req.body)
 
-    const id = req.body.data.id
+     try {
+        const id = req.body.data.id
    
-  
         const url = `https://api.mercadopago.com/v1/payments/${id}`
 
         const payment = await axios.get(url, {
@@ -27,6 +27,9 @@ const notification = (async(req, res) => {
                          
                    res.sendStatus(200)
                    console.log('datosPayment:', payment)
+     } catch (error) {
+         console.log('errorNotification:', error)
+     }
    
       
     
