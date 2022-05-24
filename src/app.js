@@ -35,7 +35,7 @@ app.use(require('./routes/getUser'))
 app.use(require('./routes/compras'))
 app.use(require('./routes/getAllCompras'))
 app.use(require('./routes/pagos'))
-// app.use(require('./routes/notification'))
+app.use(require('./routes/notification'))
 
 
 
