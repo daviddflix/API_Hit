@@ -26,7 +26,7 @@ const notification = (async(req, res) => {
                    });
                          
                    res.sendStatus(200)
-                   console.log('datosPayment:', payment)
+                   console.log('datosPayment:', payment.data.status)
      } catch (error) {
          console.log('errorNotification:', error)
      }
