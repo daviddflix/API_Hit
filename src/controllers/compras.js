@@ -2,20 +2,22 @@ const {Compras, User } = require('../database')
 
  const compras = (async (req, res) => {
       const  value = req.body 
-     
+      console.log('compras:', value)
     
-      const pricesItem =  value.cart.map(p => p.unit_price)
-      const total = pricesItem.reduce((prev, curr) => prev + curr, 0)
+      const pricesItem =  value.cart.map(el =>  el.unit_price * el.quantity);
+      const totalAmount = pricesItem.reduce((prev, curr) => prev + curr, 0)
+      console.log('pricesItem',pricesItem)
 
      
     try {
       if(value){
       const compra = await Compras.create({
           pedido: value.cart,
-          total: total,
+          total: totalAmount,
           direccionDeEnvio: value.input.direccion,
           celular: value.input.numero,
-          zona: value.input.zona
+          zona: value.input.zona,
+          name: value.input.nombre
         })
 
          const id =  value.input.sub

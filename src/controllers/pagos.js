@@ -6,18 +6,6 @@ const mercadopago = require ('mercadopago');
 const payment = (async (req, res) => {
       
     const itemsToPay = req.body
-    
-   const user = await User.findAll({where: {id: itemsToPay.user.sub}})
-  
- 
-   const amount = itemsToPay.cart.map(p => p.unit_price)
-   const totalAmount = amount.reduce((prev, curr) => prev + curr, 0)
-
-   const itemsToShowInMessage = itemsToPay.cart.map(p => {
-     return(
-       product= p.title
-     )
-   })
 
 
   // Agrega credenciales
@@ -47,13 +35,7 @@ const payment = (async (req, res) => {
       console.log(error);
     });
 
-    const pago = await Pagos.create({
-      monto: totalAmount,
-      method: 'Mercado Pago',
-      email: itemsToPay.user.email, 
-    })
-
-    await pago.setUser(itemsToPay.user.sub)
+  
           
 })
 

@@ -1,20 +1,33 @@
+const { Op } = require('sequelize');
 const {User, Compras} = require('../database')
 
 
  const getUser = (async (req, res) => {
-      const id = req.body || req.query
+      const {phonenumber, email, name} =  req.query
      
     try {
         
       const  users = await User.findAll()
      
         if(users.length){
-            const usuario = await  User.findAll({where: {id: id}, include: [Compras]});
-            
+            const UserByPhone = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ phonenumber + '%'}}, include: [Compras, Pagos]});
+            const UserByEmail = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ email + '%'}}, include: [Compras, Pagos]});
+            const UserByName = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ name + '%'}}, include: [Compras, Pagos]});
+
+            if(UserByPhone){
+              res.send(UserByPhone)
+            }
+
+            if(UserByEmail){
+              res.send(UserByEmail)
+            }
+            if(UserByName){
+              res.send(UserByName)
+            }
         
-          return  res.send(usuario)
+          
         } else{
-            res.send('no hay usuarios')  
+            res.send('no se encontro un cliente con esos parametros de busqueda')  
         }
        
        

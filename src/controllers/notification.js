@@ -24,6 +24,16 @@ const notification = (async(req, res) => {
                        Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
                      }
                    });
+        
+                   const pago = await Pagos.create({
+                    monto: payment.transaction_amount,
+                    dni: payment.payer.identification.number,
+                    method: payment.payment_type_id,
+                    email: payment.payer.email,
+                    status: payment.data.status
+                  })
+              
+                  await pago.setUser(itemsToPay.user.sub)
                          
                    res.sendStatus(200)
                    console.log('datosPayment:', payment.data.status)
