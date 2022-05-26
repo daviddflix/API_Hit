@@ -1,6 +1,8 @@
+const app = require('../app') 
 const {Pagos} = require('../database')
 const axios = require("axios");
-
+const { Server } = require('socket.io')
+const io = new Server(app)
 
 // const accountSid = 'ACcf9366d9570236546173ca619d4d6a5a'; 
 // const authToken = process.env.AUTHTOKEN; 
@@ -8,6 +10,10 @@ const axios = require("axios");
 
 // var mercadopago = require('mercadopago');
 // mercadopago.configurations.setAccessToken(process.env.TEST_ACCESS_TOKEN);
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+});
 
 const notification = (async(req, res) => {
 
@@ -25,15 +31,18 @@ const notification = (async(req, res) => {
                      }
                    });
         
-                   const pago = await Pagos.create({
-                    monto: payment.transaction_amount,
-                    dni: payment.payer.identification.number,
-                    method: payment.payment_type_id,
-                    email: payment.payer.email,
-                    status: payment.data.status
-                  })
-              
-                  await pago.setUser(itemsToPay.user.sub)
+                  if(payment.data.status === 'approved'){
+                    const pago = await Pagos.create({
+                      monto: payment.transaction_amount,
+                      dni: payment.payer.identification.number,
+                      method: payment.payment_type_id,
+                      email: payment.payer.email,
+                      status: payment.data.status
+                    })
+                
+                    await pago.setUser(itemsToPay.user.sub)
+                    res.sendStatus(200)
+                  } 
                          
                    res.sendStatus(200)
                    console.log('datosPayment:', payment.data.status)
