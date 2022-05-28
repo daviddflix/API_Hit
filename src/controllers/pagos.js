@@ -1,4 +1,3 @@
-const {Pagos, User} = require('../database')
 const axios = require("axios");
 const mercadopago = require ('mercadopago');
 
