@@ -1,5 +1,5 @@
 const { Op } = require('sequelize');
-const {User, Compras} = require('../database')
+const {User, Compras, Pagos} = require('../database')
 
 
  const getUser = (async (req, res) => {
