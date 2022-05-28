@@ -45,7 +45,7 @@ const notification = (async(req, res) => {
                 
                     await pago.setUser(findUser.id)
                   
-                    res.sendStatus(200).json({data: pago})
+                    res.sendStatus(200)
                   } else {
                     res.sendStatus(200)
                   }
