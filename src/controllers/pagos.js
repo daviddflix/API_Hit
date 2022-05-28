@@ -22,7 +22,8 @@ const payment = (async (req, res) => {
       success: "https://hitpasta.vercel.app"
     },
     binary_mode:true,
-    
+    email: itemsToPay.input.email,
+    name: itemsToPay.input.nombre
     
   };
     mercadopago.preferences.create(preference)

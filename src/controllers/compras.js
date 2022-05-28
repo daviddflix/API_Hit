@@ -21,8 +21,8 @@ const {Compras, User } = require('../database')
         })
 
          const id =  value.input.sub
-         const user = await User.findAll({where:{id: id}})
-        await compra.setUser(id)
+      
+         await compra.setUser(id)
          res.send('purchase added')
 
         } else{
