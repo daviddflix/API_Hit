@@ -24,8 +24,8 @@ const notification = (async(req, res) => {
                        Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
                      }
                    });
-                   console.log('payment:', payment)
-                   console.log('payment:', payment.payer)
+                   console.log('payment:', payment.data)
+                   console.log('payment.payer:', payment.data.payer)
                   
                  
                   //  const findUser = await User.finAll({where: {email: payment.payer.email}})
@@ -34,12 +34,12 @@ const notification = (async(req, res) => {
                    
                   if(payment.data.status === 'approved'){
                     const pago = await Pagos.create({
-                      monto: payment.transaction_amount,
-                      dni: payment.payer.identification.number,
-                      method: payment.payment_type_id,
-                      email: payment.payer.email,
+                      monto: payment.data.transaction_amount,
+                      dni: payment.data.payer.identification.number,
+                      method: payment.data.payment_type_id,
+                      email: payment.data.payer.email,
                       status: payment.data.status,
-                      name: payment.payer.first_name
+                      name: payment.data.payer.first_name
                     })
                 
                     // await pago.setUser(findUser.id)
