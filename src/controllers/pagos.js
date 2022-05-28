@@ -24,7 +24,7 @@ const payment = (async (req, res) => {
     binary_mode:true,
     payer: {
       phone: {
-       number: itemsToPay.input.numero
+       number: Number(itemsToPay.input.numero)
       },
       email: itemsToPay.input.email,
       name: itemsToPay.input.nombre,
