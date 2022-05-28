@@ -24,9 +24,9 @@ const notification = (async(req, res) => {
                        Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
                      }
                    });
-                   console.log('payment:', payment.payer.identification)
-                   console.log('payment:', payment.payer.identification.number)
-                   console.log('payment:', payment.payer.phone)
+                   console.log('payment:', payment)
+                   console.log('payment:', payment.payer)
+                  
                  
                   //  const findUser = await User.finAll({where: {email: payment.payer.email}})
 
