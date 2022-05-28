@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
  
   sequelize.define('pagos', {
     name: {type: DataTypes.STRING},
-    dni: {type: DataTypes.NUMBER},
+    dni: {type: DataTypes.BIGINT},
     monto: {type: DataTypes.INTEGER},
     method: {type: DataTypes.STRING},
     email: {type: DataTypes.STRING},
