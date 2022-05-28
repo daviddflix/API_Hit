@@ -3,18 +3,18 @@ const {User, Compras, Pagos} = require('../database')
 
 
  const getUser = (async (req, res) => {
-      const {phonenumber, email, name} =  req.query
+      const {email, name, phonenumber} =  req.query
      
     try {
         
       const  users = await User.findAll()
      
         if(users.length){
-          if(phonenumber || email || name){
+          if(email){
 
             const UserByPhone = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ phonenumber + '%'}}, include: [Compras, Pagos]});
-            const UserByEmail = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ email + '%'}}, include: [Compras, Pagos]});
-            const UserByName = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ name + '%'}}, include: [Compras, Pagos]});
+            const UserByEmail = await  User.findAll({where: {email : {[Op.iLike]: '%'+ email + '%'}}, include: [Compras, Pagos]});
+            const UserByName = await  User.findAll({where: {name : {[Op.iLike]: '%'+ name + '%'}}, include: [Compras, Pagos]});
 
             if(UserByPhone){
               res.send(UserByPhone)
