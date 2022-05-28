@@ -4,9 +4,12 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
  
   sequelize.define('pagos', {
+    name: {type: DataTypes.STRING},
+    dni: {type: DataTypes.NUMBER},
     monto: {type: DataTypes.INTEGER},
     method: {type: DataTypes.STRING},
     email: {type: DataTypes.STRING},
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true}
+    status: {type: DataTypes.STRING},
+    id: {type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true}
   }, {timestamps: true })
 };

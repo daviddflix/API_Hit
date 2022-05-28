@@ -24,8 +24,10 @@ const notification = (async(req, res) => {
                        Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
                      }
                    });
-                   console.log('payment:', payment)
-
+                   console.log('payment:', payment.payer.identification)
+                   console.log('payment:', payment.payer.identification.number)
+                   console.log('payment:', payment.payer.phone)
+                 
                   //  const findUser = await User.finAll({where: {email: payment.payer.email}})
 
                   //  console.log('findUser:', findUser)
@@ -36,7 +38,8 @@ const notification = (async(req, res) => {
                       dni: payment.payer.identification.number,
                       method: payment.payment_type_id,
                       email: payment.payer.email,
-                      status: payment.data.status
+                      status: payment.data.status,
+                      name: payment.payer.first_name
                     })
                 
                     // await pago.setUser(findUser.id)
