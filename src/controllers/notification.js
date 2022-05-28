@@ -28,9 +28,9 @@ const notification = (async(req, res) => {
                    console.log('payment.payer:', payment.data.payer)
                   
                  
-                  //  const findUser = await User.finAll({where: {email: payment.payer.email}})
+                   const findUser = await User.finAll({where: {name: payment.data.additional_info.payer.first_name}})
 
-                  //  console.log('findUser:', findUser)
+                   console.log('findUser:', findUser)
                    
                   if(payment.data.status === 'approved'){
                     const pago = await Pagos.create({
@@ -39,15 +39,13 @@ const notification = (async(req, res) => {
                       method: payment.data.payment_type_id,
                       email: payment.data.payer.email,
                       status: payment.data.status,
-                      name: payment.data.payer.first_name
+                      name: payment.data.payer.first_name,
+                      items: payment.data.additional_info.items
                     })
                 
-                    // await pago.setUser(findUser.id)
-                    res.send({
-                      status: 200,
-                      data: pago
-                    })
-
+                    await pago.setUser(findUser.id)
+                  
+                    res.sendStatus(200).json({data: pago})
                   } else {
                     res.sendStatus(200)
                   }
