@@ -6,7 +6,7 @@ const mercadopago = require ('mercadopago');
 const payment = (async (req, res) => {
       
     const itemsToPay = req.body
-
+    console.log('itemstopay', itemsToPay)
 
   // Agrega credenciales
   mercadopago.configure({
