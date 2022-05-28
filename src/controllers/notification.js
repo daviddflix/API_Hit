@@ -28,7 +28,7 @@ const notification = (async(req, res) => {
                    console.log('payment.payer:', payment.data.payer)
                   
                  
-                   const findUser = await User.finAll({where: {name: payment.data.additional_info.payer.first_name}})
+                   const findUser = await User.findAll({where: {name: payment.data.additional_info.payer.first_name}})
 
                    console.log('findUser:', findUser)
                    
