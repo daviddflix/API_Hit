@@ -1,8 +1,6 @@
-const app = require('../app') 
-const {Pagos} = require('../database')
+
+const {Pagos, User} = require('../database')
 const axios = require("axios");
-const { Server } = require('socket.io')
-const io = new Server(app)
 
 // const accountSid = 'ACcf9366d9570236546173ca619d4d6a5a'; 
 // const authToken = process.env.AUTHTOKEN; 
@@ -11,13 +9,9 @@ const io = new Server(app)
 // var mercadopago = require('mercadopago');
 // mercadopago.configurations.setAccessToken(process.env.TEST_ACCESS_TOKEN);
 
-io.on('connection', (socket) => {
-  console.log('a user connected');
-});
 
 const notification = (async(req, res) => {
 
-    console.log('query:',req.query)
     console.log('body:',req.body)
 
      try {
@@ -30,7 +24,12 @@ const notification = (async(req, res) => {
                        Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
                      }
                    });
-        
+                   console.log('payment:',payment)
+
+                   const findUser = await User.finAll({where: {email: payment.payer.email}})
+
+                   console.log('findUser:', findUser)
+                   
                   if(payment.data.status === 'approved'){
                     const pago = await Pagos.create({
                       monto: payment.transaction_amount,
@@ -40,12 +39,17 @@ const notification = (async(req, res) => {
                       status: payment.data.status
                     })
                 
-                    await pago.setUser(itemsToPay.user.sub)
+                    await pago.setUser(findUser.id)
+                    res.send({
+                      status: 200,
+                      data: pago
+                    })
+
+                  } else {
                     res.sendStatus(200)
-                  } 
+                  }
                          
-                   res.sendStatus(200)
-                   console.log('datosPayment:', payment.data.status)
+                  
      } catch (error) {
          console.log('errorNotification:', error)
      }

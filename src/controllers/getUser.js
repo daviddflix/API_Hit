@@ -9,7 +9,7 @@ const {User, Compras} = require('../database')
         
       const  users = await User.findAll()
      
-        if(users.length){
+        if(users.length && phonenumber || email || name){
             const UserByPhone = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ phonenumber + '%'}}, include: [Compras, Pagos]});
             const UserByEmail = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ email + '%'}}, include: [Compras, Pagos]});
             const UserByName = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ name + '%'}}, include: [Compras, Pagos]});
@@ -27,7 +27,7 @@ const {User, Compras} = require('../database')
         
           
         } else{
-            res.send('no se encontro un cliente con esos parametros de busqueda')  
+            res.send(users)  
         }
        
        
