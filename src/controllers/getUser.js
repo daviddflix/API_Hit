@@ -12,15 +12,15 @@ const {User, Compras, Pagos} = require('../database')
         if(users.length){
           if(email){
 
-            const UserByPhone = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ phonenumber + '%'}}, include: [Compras, Pagos]});
+            // const UserByPhone = await  User.findAll({where: {phonenumber : {[Op.iLike]: '%'+ phonenumber + '%'}}, include: [Compras, Pagos]});
             const UserByEmail = await  User.findAll({where: {email : {[Op.iLike]: '%'+ email + '%'}}, include: [Compras, Pagos]});
-            const UserByName = await  User.findAll({where: {name : {[Op.iLike]: '%'+ name + '%'}}, include: [Compras, Pagos]});
+            // const UserByName = await  User.findAll({where: {name : {[Op.iLike]: '%'+ name + '%'}}, include: [Compras, Pagos]});
 
-            if(UserByPhone){
-              res.send(UserByPhone)
-            } else{
-              res.send('user not found')
-            }
+            // if(UserByPhone){
+            //   res.send(UserByPhone)
+            // } else{
+            //   res.send('user not found')
+            // }
 
             if(UserByEmail){
               res.send(UserByEmail)
@@ -28,11 +28,11 @@ const {User, Compras, Pagos} = require('../database')
               res.send('user not found')
             }
 
-            if(UserByName){
-              res.send(UserByName)
-            } else{
-              res.send('user not found')
-            }
+            // if(UserByName){
+            //   res.send(UserByName)
+            // } else{
+            //   res.send('user not found')
+            // }
         
 
           }else{
@@ -48,7 +48,7 @@ const {User, Compras, Pagos} = require('../database')
            
         
     } catch (error) {
-        console.log('algo paso',error)
+        console.log('algo paso EN GET USER',error)
     }
 
   
