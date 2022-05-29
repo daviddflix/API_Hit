@@ -2,6 +2,7 @@
 const {Pagos, User} = require('../database')
 const axios = require("axios");
 
+
 // const accountSid = 'ACcf9366d9570236546173ca619d4d6a5a'; 
 // const authToken = process.env.AUTHTOKEN; 
 // const client = require('twilio')(accountSid, authToken); 
@@ -44,11 +45,14 @@ const notification = (async(req, res) => {
                     })
                 
                     await pago.setUser(findUser.id)
-                  
+
+                   
                     res.sendStatus(200)
                   } else {
                     res.sendStatus(200)
                   }
+
+
                          
                   
      } catch (error) {

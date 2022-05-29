@@ -1,27 +1,86 @@
+
+const {Pagos, User} = require('./database')
+const axios = require("axios");
 const express = require('express');
 const http = require("http");
-const socketIo = require("socket.io")
+const { Server } = require("socket.io")
 
 const app = express()
 const server = http.createServer(app);
-const io = socketIo(server, {
+const io = new Server(server, {
   cors: {
     origin : "http://localhost:3000",
-    credentials: true
+    credentials: true,
   }
 })
 
 const path = require('path')
 const cors = require('cors')
 const favicon = require('serve-favicon')
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+
 
 app.use(express.json())
-// app.use(cors())
-// app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }))
-// app.use(bodyParser.json({ limit: '50mb' }))
-// app.use(express.json({ extended: true }))
-// app.use(express.urlencoded({ extended: true }))
+
+
+
+app.post('/postnotification',async (req, res) => {
+  console.log('body:',req.body)
+
+     try {
+        const id = req.body.data.id
+   
+        const url = `https://api.mercadopago.com/v1/payments/${id}`
+
+        const payment = await axios.get(url, {
+                     headers: {
+                       Authorization: `Bearer ${process.env.TEST_ACCESS_TOKEN}`
+                     }
+                   });
+                   console.log('payment:', payment.data)
+                   console.log('payment.payer:', payment.data.payer)
+                  
+                 
+                   const findUser = await User.findOne({where: {name: payment.data.additional_info.payer.first_name}})
+
+                   console.log('findUser:', findUser)
+                   
+                  if(payment.data.status === 'approved'){
+                    const pago = await Pagos.create({
+                      monto: payment.data.transaction_amount,
+                      dni: payment.data.payer.identification.number,
+                      method: payment.data.payment_type_id,
+                      email: payment.data.payer.email,
+                      status: payment.data.status,
+                      name: payment.data.payer.first_name,
+                      items: payment.data.additional_info.items
+                    })
+                
+                    await pago.setUser(findUser.id)
+
+                   
+                    io.on('connection', (socket) => {
+                      console.log('client connect', socket.id)
+                      socket.emit('message', {message: pago})
+
+                    })
+
+                    res.sendStatus(200)
+                  } else {
+                    res.sendStatus(200)
+                  }
+
+
+                         
+                  
+     } catch (error) {
+         console.log('errorNotification:', error)
+     }
+      
+      
+})
+
+
 
 
 app.use((req, res, next) => {
@@ -31,33 +90,9 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
   });
-  // app.use(express.urlencoded({extended: false}))
 
 app.use(express.static('public'))
 app.use(favicon(path.join('public','favicon.ico')))
-
-let interval;
-
-io.on("connection", (socket) => {
-    console.log("New client connected");
-    if (interval) {
-      clearInterval(interval);
-    }
-    interval = setInterval(() => getApiAndEmit(socket), 1000);
-    socket.on("disconnect", () => {
-      console.log("Client disconnected");
-      clearInterval(interval);
-    });
-  });
-
-  const getApiAndEmit = socket => {
-    const response = new Date();
-    // Emitting a new message. Will be consumed by the client
-    socket.emit("FromAPI", response);
-  };
-
-
-
 
 
 app.use(require('./routes/products'))
@@ -67,10 +102,8 @@ app.use(require('./routes/getUser'))
 app.use(require('./routes/compras'))
 app.use(require('./routes/getAllCompras'))
 app.use(require('./routes/pagos'))
-app.use(require('./routes/notification'))
+// app.use(require('./routes/notification'))
 app.use(require('./routes/getAllPagos'))
-app.use(require('./routes/sendNotification'))
-
 
 
 module.exports = {server, io}

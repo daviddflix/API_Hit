@@ -1,10 +1,10 @@
 const {Compras} = require('../database')
 
-
  const getAllCompras = (async (req, res) => {
      
     try {
-        
+       
+    
       const  compras = await Compras.findAll()
   
         if(compras.length){
