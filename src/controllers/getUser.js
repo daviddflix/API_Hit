@@ -7,7 +7,7 @@ const {User, Compras, Pagos} = require('../database')
      
     try {
         
-      const  users = await User.findAll()
+      const  users = await User.findAll({include: [Compras, Pagos]})
      
         if(users.length){
           if(email){
