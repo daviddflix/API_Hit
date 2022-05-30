@@ -30,6 +30,8 @@ io.on('connection', (socket) => {
 
 
 
+
+
 app.post('/postnotification',async (req, res) => {
   console.log('body:',req.body)
 
@@ -64,10 +66,12 @@ app.post('/postnotification',async (req, res) => {
                 
                     await pago.setUser(findUser.id)
 
+                    io.on('connection', (socket) => {
+                      if(pago){
+                        socket.emit('message', {message: pago })
+                      }
+                    })
                    
-                    if(pago){
-                      socket.emit('message', {message: pago })
-                    }
                    
                    
 
