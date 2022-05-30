@@ -11,7 +11,9 @@ const io = new Server(server, {
   cors: {
     origin : "*",
     credentials: true,
-  }
+  },
+  transports: ['websocket', 'polling']
+
 })
 
 const path = require('path')
