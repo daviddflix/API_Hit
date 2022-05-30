@@ -61,7 +61,7 @@ app.post('/postnotification',async (req, res) => {
                    
                     io.on('connection', (socket) => {
                       console.log('client connect', socket.id)
-                      socket.emit('message', {message: pago})
+                      socket.emit('message', {message: [pago, findUser]})
 
                     })
 
