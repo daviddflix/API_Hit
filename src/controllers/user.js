@@ -1,6 +1,5 @@
-const { where } = require('sequelize/types');
-const {User} = require('../database')
 
+const {User} = require('../database')
 
  const user = (async (req, res) => {
     
