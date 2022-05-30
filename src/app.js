@@ -61,13 +61,15 @@ app.post('/postnotification',async (req, res) => {
                     await pago.setUser(findUser.id)
 
                    
-                   if(pago){
+                  
                     io.on('connection', (socket) => {
                       console.log('client connect', socket.id)
-                      socket.emit('message', {message: pago })
+                      if(pago){
+                        socket.emit('message', {message: pago })
+                      }
 
                     })
-                   }
+                   
 
                     res.sendStatus(200)
                   } else {
