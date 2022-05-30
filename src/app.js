@@ -24,6 +24,10 @@ const bodyParser = require('body-parser');
 
 app.use(express.json())
 
+io.on('connection', (socket) => {
+  console.log('client connect', socket.id)
+})
+
 
 
 app.post('/postnotification',async (req, res) => {
@@ -61,14 +65,10 @@ app.post('/postnotification',async (req, res) => {
                     await pago.setUser(findUser.id)
 
                    
-                  
-                    io.on('connection', (socket) => {
-                      console.log('client connect', socket.id)
-                      if(pago){
-                        socket.emit('message', {message: pago })
-                      }
-
-                    })
+                    if(pago){
+                      socket.emit('message', {message: pago })
+                    }
+                   
                    
 
                     res.sendStatus(200)
