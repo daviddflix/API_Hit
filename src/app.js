@@ -9,7 +9,7 @@ const app = express()
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin : "http://localhost:3000",
+    origin : "https://hitpasta.vercel.app",
     credentials: true,
   }
 })
@@ -61,7 +61,7 @@ app.post('/postnotification',async (req, res) => {
                    
                     io.on('connection', (socket) => {
                       console.log('client connect', socket.id)
-                      socket.emit('message', {message: pago})
+                      socket.emit('message', {message: [pago, findUser]})
 
                     })
 
