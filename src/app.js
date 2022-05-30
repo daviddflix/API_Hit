@@ -1,5 +1,5 @@
 
-const {Pagos, User} = require('./database')
+const {Pagos, User, Compras} = require('./database')
 const axios = require("axios");
 const express = require('express');
 const http = require("http");
@@ -50,7 +50,7 @@ app.post('/postnotification',async (req, res) => {
                    console.log('payment.payer:', payment.data.payer)
                   
                  
-                   const findUser = await User.findOne({where: {name: payment.data.additional_info.payer.first_name}})
+                   const findUser = await User.findOne({where: {name: payment.data.additional_info.payer.first_name}, include: [Compras]})
 
                    console.log('findUser:', findUser)
                    

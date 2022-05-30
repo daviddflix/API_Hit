@@ -1,3 +1,4 @@
+const { where } = require('sequelize/types');
 const {User} = require('../database')
 
 
@@ -23,7 +24,7 @@ const {User} = require('../database')
             }) 
           res.send('user added to the DB')
            } else{
-               res.send('user already exist')
+             await  User.update({name: nombre, address: direccion, phonenumber:numero , zona: zona}, {where: {id: sub}})
            }
            
            
