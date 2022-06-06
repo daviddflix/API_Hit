@@ -12,20 +12,20 @@ const sauces = [{sauce: 'Pomodoro', description: 'Salsa de Tomate Especial HIT'}
  {sauce: 'Vodka sauce', description: 'Tomate, Cebolla, Crema y Vodka'},
 ]
 const extra = ['Meatball','Bacon', 'Carne', 'Pollo', 'Queso Parmesano', 'Hongos', 'Aceitunas', 'Jalapeños', 'Tomates Confitados', 'Alcaparras', 'Panes']
-const dessert = [{title: 'Cheesecake', picture_url: '/img/Images/cheesecake.jpg', id: 1}, {title: 'Chocotorta', picture_url: '/img/Images/chocotorta.jpg', id: 2}, {title: 'Tiramisu', picture_url: 'img/Images/tiramisu2.jpg', id: 3}]
+const dessert = [{title: 'Cheesecake', picture_url: '/img/Images/cheesecake.jpg', id: 17}, {title: 'Chocotorta', picture_url: '/img/Images/chocotorta.jpg', id: 18}, {title: 'Tiramisu', picture_url: 'img/Images/tiramisu2.jpg', id: 19}]
 
 
 
-const beverages = [{title: 'Coca-Cola Light 354ml', price: 230, picture_url: '/img/Drinks/cocalight.jpg', id: 1}, 
-{title: 'Coca-Cola Sin Azúcar', price: 270, picture_url: '/img/Drinks/cocasin.webp', id: 2}, 
-{title: 'Coca-Cola Sabor Original 354ml', price: 270, picture_url: '/img/Drinks/cocaoriginal.jpg', id: 3}, 
-{title: 'Fanta Naranja 354ml', price: 270, picture_url: '/img/Drinks/fanta.webp', id: 4}, 
-{title: 'Sprite Lima Limón 354ml', price: 270, picture_url: '/img/Drinks/sprite2.webp', id: 5},  
-{title: 'SmartWater Sin Gas 591ml', price: 270, picture_url: '/img/Drinks/smart.jpg', id: 6},
-{title: 'Imperial Lager 473ml', price: 350, picture_url: '/img/Drinks/lager.jpeg', id: 7}, 
-{title: 'Heineken Regular 473ml', price: 420, picture_url: '/img/Drinks/heicrop.png', id: 8}, 
-{title: 'Imperial Amber Lager 473ml', price: 350, picture_url: '/img/Drinks/amber.jpg', id: 9}, 
-{title: 'Imperial Ipa 473ml', price: 350, picture_url: '/img/Drinks/ipa2.jpg', id: 10}]
+const beverages = [{title: 'Coca-Cola Light 354ml', price: 230, picture_url: '/img/Drinks/cocalight.jpg', id: 7}, 
+{title: 'Coca-Cola Sin Azúcar', price: 270, picture_url: '/img/Drinks/cocasin.webp', id: 8}, 
+{title: 'Coca-Cola Sabor Original 354ml', price: 270, picture_url: '/img/Drinks/cocaoriginal.jpg', id: 9}, 
+{title: 'Fanta Naranja 354ml', price: 270, picture_url: '/img/Drinks/fanta.webp', id: 10}, 
+{title: 'Sprite Lima Limón 354ml', price: 270, picture_url: '/img/Drinks/sprite2.webp', id: 11},  
+{title: 'SmartWater Sin Gas 591ml', price: 270, picture_url: '/img/Drinks/smart.jpg', id: 12},
+{title: 'Imperial Lager 473ml', price: 350, picture_url: '/img/Drinks/lager.jpeg', id: 13}, 
+{title: 'Heineken Regular 473ml', price: 420, picture_url: '/img/Drinks/heicrop.png', id: 14}, 
+{title: 'Imperial Amber Lager 473ml', price: 350, picture_url: '/img/Drinks/amber.jpg', id: 15}, 
+{title: 'Imperial Ipa 473ml', price: 350, picture_url: '/img/Drinks/ipa2.jpg', id: 16}]
 
 const dessertPrice = 400
 const price = 699
