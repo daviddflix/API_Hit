@@ -69,7 +69,7 @@ app.post('/postnotification',async (req, res) => {
                      console.log('global', global)
                    
                       if(pago){
-                        global.socket.emit('message', [{pago, findUser}])
+                       io.emit('message', [{pago, findUser}])
                       }
                   
                    

@@ -1,11 +1,11 @@
-const product = ['Penne Rigate', 'Conchiglie', 'Cavatelli', 'Gnocchi', 'Spaguetti', 'Tagliattele' ]
+const product = ['Penne Rigatte', 'Conchiglie', 'Cavatelli', 'Gnocchi', 'Spaghetti', 'Tagliattele' ]
 const sauces = [{sauce: 'Pomodoro', description: 'Salsa de Tomate Especial HIT'},
  {sauce: 'Crema', description: ''}, {sauce: 'Arrabiata', description: 'Salsa Pomodoro HIT con Jalapeños'} ,
  {sauce: 'Bolognesa', description: 'Pomodoro HIT con Ragu de Carne'},
  {sauce: 'Pesto', description: 'Albahaca, Parmesano, Nuez y Aceite de Oliva'},
  {sauce: 'Cheddar', description: 'Elaboración Propia de Crema de Cheddar'},
  {sauce: 'Puttanesca', description: 'Pomodoro HIT, Aceitunas Negras, Ajo y Alcaparras'},
- {sauce: 'Oriental', description: 'Vegetale de Estación, Soja, Salsa de Ostras y Aceite de Sesamo'},
+ {sauce: 'Oriental', description: 'Vegetales de Estación, Soja, Salsa de Ostras y Aceite de Sesamo'},
  {sauce: 'Curry', description: 'Crema con Pasta de Curry Suave'},
  {sauce: 'Cuatro quesos', description: 'Queso Muzzarella, Azul, Parmesano y Queso Crema'},
  {sauce: 'Crema de espinaca', description: 'Espinacas Salteadas, Crema, Ajo y Queso Crema'},

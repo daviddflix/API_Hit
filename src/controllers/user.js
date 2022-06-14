@@ -7,10 +7,8 @@ const {User} = require('../database')
     try {
  
         
-        const usuario = await  User.findAll({where: {id: sub}});// data de la tabla
+        const usuario = await  User.findAll({where: {phonenumber: numero}});
           
-        
-       
            if(!usuario.length){
                
           await  User.create({
@@ -21,16 +19,16 @@ const {User} = require('../database')
                 phonenumber: numero,
                 zona: zona
             }) 
-          res.send('user added to the DB')
+          res.send('client added to the DB')
            } else{
-             await  User.update({name: nombre, address: direccion, phonenumber:numero , zona: zona}, {where: {id: sub}})
+              res.send('client already exit')
            }
            
            
            
         
     } catch (error) {
-        console.log('algo paso',error)
+        console.log('algo paso en user',error)
     }
 
   

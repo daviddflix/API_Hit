@@ -9,6 +9,5 @@ module.exports = (sequelize) => {
     email: {type: DataTypes.STRING},
     phonenumber: {type: DataTypes.INTEGER},
     zona: {type: DataTypes.STRING},
-    id: {type: DataTypes.STRING, primaryKey: true}
   }, {timestamps: false })
 };
