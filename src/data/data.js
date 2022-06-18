@@ -28,8 +28,8 @@ const beverages = [{title: 'Coca-Cola Light 354ml', price: 230, picture_url: '/i
 {title: 'Imperial Ipa 473ml', price: 350, picture_url: '/img/Drinks/ipa2.jpg', id: 16}]
 
 const dessertPrice = 400
-const price = 699
-const priceExtra = 119
+const price = 750
+const priceExtra = 122
 const data = [
     {
      picture_url: '/img/conchiglie.jpg',
