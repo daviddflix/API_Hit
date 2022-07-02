@@ -7,7 +7,7 @@ const sauces = [{sauce: 'Pomodoro', description: 'Salsa de Tomate Especial HIT',
  {sauce: 'Cheddar', description: 'Elaboración Propia de Crema de Cheddar', img: '/Platos/cheddarsi.png'},
  {sauce: 'Puttanesca', description: 'Pomodoro HIT, Aceitunas Negras, Ajo y Alcaparras', img: '/Platos/pomodoro.png'},
  {sauce: 'Oriental', description: 'Vegetales de Estación, Soja, Salsa de Ostras y Aceite de Sesamo', img: '/Platos/oriental.png'},
- {sauce: 'Curry', description: 'Crema con Pasta de Curry Suave', img: '/Platos/chedar.png'},
+ {sauce: 'Curry', description: 'Crema con Pasta de Curry Suave', img: '/Platos/cheddar.png'},
  {sauce: 'Cuatro quesos', description: 'Queso Muzzarella, Azul, Parmesano y Queso Crema', img: '/Platos/4quesos.png'},
  {sauce: 'Crema de espinaca', description: 'Espinacas Salteadas, Crema, Ajo y Queso Crema', img: '/Platos/cremaespi.png'},
  {sauce: 'Vodka sauce', description: 'Tomate, Cebolla, Crema y Vodka', img: '/Platos/bolognesa.png'},
@@ -33,7 +33,7 @@ const price = 750
 const priceExtra = 122
 const data = [
     {
-     picture_url: '/Platos/conchiglie.png',
+     picture_url: 'https://hit-pasta.herokuapp.com/Platos/conchiglie.png',
      title: 'Conchiglie',
      price: price,
      pastas: product,
