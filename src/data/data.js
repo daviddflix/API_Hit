@@ -1,15 +1,16 @@
 const product = ['Penne Rigatte', 'Conchiglie', 'Cavatelli', 'Gnocchi', 'Spaghetti', 'Tagliattele' ]
-const sauces = [{sauce: 'Pomodoro', description: 'Salsa de Tomate Especial HIT'},
- {sauce: 'Crema', description: ''}, {sauce: 'Arrabiata', description: 'Salsa Pomodoro HIT con Jalapeños'} ,
- {sauce: 'Bolognesa', description: 'Pomodoro HIT con Ragu de Carne'},
- {sauce: 'Pesto', description: 'Albahaca, Parmesano, Nuez y Aceite de Oliva'},
- {sauce: 'Cheddar', description: 'Elaboración Propia de Crema de Cheddar'},
- {sauce: 'Puttanesca', description: 'Pomodoro HIT, Aceitunas Negras, Ajo y Alcaparras'},
- {sauce: 'Oriental', description: 'Vegetales de Estación, Soja, Salsa de Ostras y Aceite de Sesamo'},
- {sauce: 'Curry', description: 'Crema con Pasta de Curry Suave'},
- {sauce: 'Cuatro quesos', description: 'Queso Muzzarella, Azul, Parmesano y Queso Crema'},
- {sauce: 'Crema de espinaca', description: 'Espinacas Salteadas, Crema, Ajo y Queso Crema'},
- {sauce: 'Vodka sauce', description: 'Tomate, Cebolla, Crema y Vodka'},
+
+const sauces = [{sauce: 'Pomodoro', description: 'Salsa de Tomate Especial HIT', img: '/Platos/pomodoro.png'},
+ {sauce: 'Crema', description: '', img: '/Platos/crema.jpg'}, {sauce: 'Arrabiata', description: 'Salsa Pomodoro HIT con Jalapeños', img: '/Platos/pomodoro.png'} ,
+ {sauce: 'Bolognesa', description: 'Pomodoro HIT con Ragu de Carne', img: '/Platos/bolognesasi.png'},
+ {sauce: 'Pesto', description: 'Albahaca, Parmesano, Nuez y Aceite de Oliva', img: '/Platos/pesto.png'},
+ {sauce: 'Cheddar', description: 'Elaboración Propia de Crema de Cheddar', img: '/Platos/cheddarsi.png'},
+ {sauce: 'Puttanesca', description: 'Pomodoro HIT, Aceitunas Negras, Ajo y Alcaparras', img: '/Platos/pomodoro.png'},
+ {sauce: 'Oriental', description: 'Vegetales de Estación, Soja, Salsa de Ostras y Aceite de Sesamo', img: '/Platos/oriental.png'},
+ {sauce: 'Curry', description: 'Crema con Pasta de Curry Suave', img: '/Platos/chedar.png'},
+ {sauce: 'Cuatro quesos', description: 'Queso Muzzarella, Azul, Parmesano y Queso Crema', img: '/Platos/4quesos.png'},
+ {sauce: 'Crema de espinaca', description: 'Espinacas Salteadas, Crema, Ajo y Queso Crema', img: '/Platos/cremaespi.png'},
+ {sauce: 'Vodka sauce', description: 'Tomate, Cebolla, Crema y Vodka', img: '/Platos/bolognesa.png'},
 ]
 const extra = ['Meatball','Bacon', 'Carne', 'Pollo', 'Queso Parmesano', 'Hongos', 'Aceitunas', 'Jalapeños', 'Tomates Confitados', 'Alcaparras', 'Panes']
 const dessert = [{title: 'Cheesecake', picture_url: '/img/Images/cheesecake.jpg', id: 17}, {title: 'Chocotorta', picture_url: '/img/Images/chocotorta.jpg', id: 18}, {title: 'Tiramisu', picture_url: 'img/Images/tiramisu2.jpg', id: 19}]
@@ -32,7 +33,7 @@ const price = 750
 const priceExtra = 122
 const data = [
     {
-     picture_url: '/img/conchiglie.jpg',
+     picture_url: '/Platos/conchiglie.png',
      title: 'Conchiglie',
      price: price,
      pastas: product,
@@ -42,7 +43,7 @@ const data = [
      beverages: beverages
     },
     {
-     picture_url:'/img/gno.jpg',
+     picture_url:'/Platos/noquis.png',
      title: 'Gnocchi',
      price: price,
      pastas: product,
@@ -50,7 +51,7 @@ const data = [
      toppings: {price: priceExtra, option: extra}
     },
     {
-     picture_url: '/img/oriental.jpg',
+     picture_url: '/Platos/spaguetti.png',
      title: 'Spaguetti',
      price: price,
      pastas: product,
@@ -58,7 +59,7 @@ const data = [
      toppings: {price: priceExtra, option: extra}
     },
     {
-     picture_url: '/img/penne.jpg',
+     picture_url: '/Platos/cooked-penne.webp',
      title: 'Penne Rigate',
      price: price,
      pastas: product,
@@ -66,7 +67,7 @@ const data = [
      toppings: {price: priceExtra, option: extra}
     },
     {
-     picture_url: '/img/tagliatelli.jpg',
+     picture_url: '/Platos/tagliatellie.png',
      title: 'Tagliattele',
      price: price,
      pastas: product,
@@ -74,7 +75,7 @@ const data = [
      toppings: {price: priceExtra, option: extra}
     },
     {
-     picture_url: '/img/272938238_4857053377720643_6162256948801704121_n.jpg',
+     picture_url: '/Platos/cavatelli.png',
      title: 'Cavatelli',
      price: price,
      pastas: product,
