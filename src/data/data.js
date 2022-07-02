@@ -1,7 +1,7 @@
 const product = ['Penne Rigatte', 'Conchiglie', 'Cavatelli', 'Gnocchi', 'Spaghetti', 'Tagliattele' ]
 
 const sauces = [{sauce: 'Pomodoro', description: 'Salsa de Tomate Especial HIT', img: 'https://hit-pasta.herokuapp.com/Platos/pomodoro.png'},
- {sauce: 'Crema', description: '', img: '/Platos/crema.jpg'}, {sauce: 'Arrabiata', description: 'Salsa Pomodoro HIT con Jalapeños', img: 'https://hit-pasta.herokuapp.com/Platos/pomodoro.png'} ,
+ {sauce: 'Crema', description: '', img: 'https://hit-pasta.herokuapp.com/Platos/crema.jpg'}, {sauce: 'Arrabiata', description: 'Salsa Pomodoro HIT con Jalapeños', img: 'https://hit-pasta.herokuapp.com/Platos/pomodoro.png'} ,
  {sauce: 'Bolognesa', description: 'Pomodoro HIT con Ragu de Carne', img: 'https://hit-pasta.herokuapp.com/Platos/bolognesasi.png'},
  {sauce: 'Pesto', description: 'Albahaca, Parmesano, Nuez y Aceite de Oliva', img: 'https://hit-pasta.herokuapp.com/Platos/pesto.png'},
  {sauce: 'Cheddar', description: 'Elaboración Propia de Crema de Cheddar', img: 'https://hit-pasta.herokuapp.com/Platos/cheddarsi.png'},
