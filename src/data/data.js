@@ -25,7 +25,7 @@ const extra = [{topping:'Meatball', picture: '/Platos/meatballs.JPG'},
 {topping:'Panes', picture: '/Platos/pan.JPG'},
 ]
 
-const dessert = [{title: 'Cheesecake', picture_url: '/img/Images/cheesecake.jpg', id: 17}, {title: 'Chocotorta', picture_url: '/img/Images/chocotorta.jpg', id: 18}, {title: 'Tiramisu', picture_url: '/img/Images/tiramisu2.jpg', id: 19}]
+const dessert = [{title: 'Cheesecake', picture_url: '/Platos/cheese.JPG', id: 17}, {title: 'Chocotorta', picture_url: '/Platos/chocotorta.JPG', id: 18}, {title: 'Tiramisu', picture_url: '/Platos/tiramisu.JPG', id: 19}]
 
 
 
