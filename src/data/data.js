@@ -41,8 +41,8 @@ const beverages = [{title: 'Coca-Cola Light 354ml', price: 230, picture_url: '/i
 {title: 'Imperial Ipa 473ml', price: 350, picture_url: '/img/Drinks/ipa2.jpg', id: 16}]
 
 const dessertPrice = 400
-const price = 750
-const priceExtra = 122
+const price = 800
+const priceExtra = 140
 const data = [
     {
      picture_url: '/Platos/conchiglie.png',
@@ -52,7 +52,8 @@ const data = [
      salsas: sauces ,
      toppings: {price: priceExtra, option: extra},
      dessert: {dessert, dessertPrice},
-     beverages: beverages
+     beverages: beverages,
+     available: true
     },
     {
      picture_url:'/Platos/noquis.png',
@@ -60,7 +61,8 @@ const data = [
      price: price,
      pastas: product,
      salsas: sauces ,
-     toppings: {price: priceExtra, option: extra}
+     toppings: {price: priceExtra, option: extra},
+     available: true
     },
     {
      picture_url: '/Platos/spaguetti.png',
@@ -68,7 +70,8 @@ const data = [
      price: price,
      pastas: product,
      salsas: sauces ,
-     toppings: {price: priceExtra, option: extra}
+     toppings: {price: priceExtra, option: extra},
+     available: true
     },
     {
      picture_url: '/Platos/cooked-penne.webp',
@@ -76,7 +79,8 @@ const data = [
      price: price,
      pastas: product,
      salsas: sauces ,
-     toppings: {price: priceExtra, option: extra}
+     toppings: {price: priceExtra, option: extra},
+     available: true
     },
     {
      picture_url: '/Platos/tagliatellie.png',
@@ -84,7 +88,8 @@ const data = [
      price: price,
      pastas: product,
      salsas: sauces ,
-     toppings: {price: priceExtra, option: extra}
+     toppings: {price: priceExtra, option: extra},
+     available: true
     },
     {
      picture_url: '/Platos/cavatelli.png',
@@ -92,7 +97,8 @@ const data = [
      price: price,
      pastas: product,
      salsas: sauces ,
-     toppings: {price: priceExtra, option: extra}
+     toppings: {price: priceExtra, option: extra},
+     available: true
     }
 ]
 
