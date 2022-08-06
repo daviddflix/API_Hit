@@ -17,9 +17,7 @@ const io = new Server(server, {
 })
 
 const path = require('path')
-const cors = require('cors')
 const favicon = require('serve-favicon')
-const bodyParser = require('body-parser');
 
 
 app.use(express.json())
