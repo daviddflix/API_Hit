@@ -103,7 +103,7 @@ app.use((req, res, next) => {
   });
 
 app.use(express.static('public'))
-app.use(favicon(path.join('public','agosto.jpg')))
+app.use(favicon(path.join('public','agosto.ico')))
 
 
 app.use(require('./routes/products'))
