@@ -1,6 +1,7 @@
-const {Compras, User } = require('../database')
+const {Compras } = require('../database')
 
  const compras = (async (req, res) => {
+  
       const  value = req.body 
       console.log('compras:', value)
     

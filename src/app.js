@@ -101,18 +101,18 @@ app.use((req, res, next) => {
   });
 
 app.use(express.static('public'))
-// app.use(favicon(path.join('public','favicon.ico')))
+
+app.use(favicon(path.join('public','favicon.ico')))
 
 
 app.use(require('./routes/products'))
-app.use(require('./routes/detail'))
 app.use(require('./routes/user'))
-app.use(require('./routes/getUser'))
+app.use(require('./routes/status'))
+app.use(require('./routes/detail'))
 app.use(require('./routes/compras'))
 app.use(require('./routes/getAllCompras'))
 app.use(require('./routes/pagos'))
 app.use(require('./routes/getAllPagos'))
-app.use(require('./routes/status'))
 
 
 module.exports = {server, io}
