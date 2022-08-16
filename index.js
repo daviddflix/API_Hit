@@ -13,7 +13,9 @@ sequelize.sync({ force: true }).then(async() => {
   if(storeStatus.length === 0){
     Store.create({
       status: 'offline',
-      name: 'Hit'
+      name: 'Hit',
+      email: 'hitpasta@gmail.com',
+      password: '1234567'
     })
   }
 

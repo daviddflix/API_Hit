@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
-const storeStatus = require('../controllers/storeStatus')
+const {store, getStatusStore} = require('../controllers/storeStatus')
 
-router.post('/storeStatus', storeStatus)
+router.post('/storeStatus', store)
+router.get('/getStatus', getStatusStore)
 
 module.exports = router

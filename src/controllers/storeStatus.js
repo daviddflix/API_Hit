@@ -22,4 +22,22 @@ const store = (async (req, res) => {
  
 })
 
-module.exports = store
+const getStatusStore = (async (req, res) => {
+   
+    const status = req.body
+  try {
+      
+      const getStatus = await Store.findAll();
+        
+         if(getStatus){ 
+         res.send(getStatus)
+         } 
+         
+  } catch (error) {
+      console.log('algo paso en getStatusStore',error)
+  }
+
+
+})
+
+module.exports = {store, getStatusStore}
